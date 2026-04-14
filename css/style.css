@@ -17,7 +17,7 @@ body { margin: 0; padding: 0; overflow-x: hidden; background: #fafafa; }
 
 /* 3. THE HEADER (SCROLLED: BEIGE GLASS) */
 .site-header.scrolled {
-    background-color: rgba(230, 216, 195, 0.9) !important; /* The Amrit Palace Beige */
+    background-color: rgba(230, 216, 195, 0.9) !important; /* The Cardamom Beige */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
