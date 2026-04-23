@@ -112,14 +112,118 @@
         }
 
         ::selection {
-            background-color: #d49653;
+            background-color: #425816;
             color: #2c2c2c;
         }
 
         ::-moz-selection {
-            background-color: #d49653;
+            background-color: #425816;
             color: #2c2c2c;
         }
+        /* --- FOOTER BACKGROUND COLOR --- */
+.footer {
+  background-color: #2b2b2b !important; /* Replace this with your new color */
+}
+/* --- FOOTER ALIGNMENT FIX --- */
+  
+  /* Hide the invisible spacer that breaks the alignment */
+  .links_footer .empty_div {
+    display: none !important; 
+  }
+
+  /* Force the links into 4 perfectly equal columns on desktop */
+  @media (min-width: 768px) {
+    .links_footer {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      width: 100% !important;
+    }
+  }
+
+  /* Center the text within each column to match the top sections */
+  .links_footer_list {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  /* --- FOOTER ALIGNMENT FIX --- */
+  .links_footer .empty_div {
+    display: none !important; 
+  }
+
+  @media (min-width: 768px) {
+    .links_footer {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      width: 100% !important;
+    }
+  }
+
+  .links_footer_list {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  /* --- PERFECT FOOTER GRID CLEANUP --- */
+  
+  /* 1. Strip ALL default borders from the inner boxes so nothing overlaps or doubles up */
+  .flexbox_box, 
+  .address_hours, 
+  .address_box, 
+  .right_fotoer_box {
+    border: none !important;
+    margin-top: 0 !important;
+  }
+
+  /* 2. Add ONE master border to the top and bottom of the entire row */
+  .content_line {
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    display: flex !important;
+    align-items: stretch !important; /* This forces the Newsletter box to align perfectly with the others */
+  }
+
+  /* 3. Draw exactly THREE clean vertical lines to separate the 4 columns */
+  .address_box {
+    border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
+  }
+  .address_hours {
+    border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
+  }
+  /* --- MOBILE FOOTER BORDER COMPLETION --- */
+  @media (max-width: 767px) {
+    /* 1. Add the missing vertical line on the far left */
+    .content_line {
+      border-left: 1px solid rgba(255, 255, 255, 0.2) !important;
+    }
+    
+    /* 2. Add the horizontal dividing line between the top row and bottom row */
+    .content_line > div:nth-child(1),
+    .content_line > div:nth-child(2) {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    }
+  }
+  /* --- FIX: PULL HOURS & NEWSLETTER TEXT UPWARDS --- */
+  @media (max-width: 767px) {
+    
+    /* Target ONLY the Hours and Newsletter boxes */
+    .address_hours, 
+    .right_fotoer_box {
+      justify-content: flex-start !important; /* This yanks all the text inside them up to the ceiling */
+    }
+
+    /* Control the gap strictly under HOURS */
+    .address_hours .txt_footer.spec {
+      margin-top: 0px !important; /* Shrunk from 30px to 15px to pull the text UP */
+    }
+
+    /* Control the gap strictly under NEWSLETTER */
+    .right_fotoer_box .txt_footer.spec {
+      margin-top: 0px !important; /* Stays at 30px to keep it aligned with Contact */
+    }
+  }
     </style>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.2.2/dist/css/splide-core.min.css">
     <style>

@@ -118,12 +118,12 @@ html.w-editor [text-split] {opacity: 1;}
 }
 
   ::selection {
-  background-color: #d49653;
+  background-color: #425816;
   color: #2c2c2c;
 }
 
 ::-moz-selection {
-  background-color: #d49653;
+  background-color: #425816;
   color: #2c2c2c;
 }
 </style><style>
@@ -134,7 +134,7 @@ html.w-editor [text-split] {opacity: 1;}
   box-shadow: none;
   padding: 12px 16px;
   color: #161616;
-  background-color: #d49653;
+  background-color: #425816;
 }
 /*popup bottom arrow color*/
 .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
@@ -160,7 +160,110 @@ html.w-editor [text-split] {opacity: 1;}
   left: 20px !important;
   transform: translateY(-50%);
 }
+/* --- FOOTER BACKGROUND COLOR --- */
+.footer {
+  background-color: #2b4a36 !important; /* Replace this with your new color */
+}
+/* --- FOOTER ALIGNMENT FIX --- */
+  
+  /* Hide the invisible spacer that breaks the alignment */
+  .links_footer .empty_div {
+    display: none !important; 
+  }
 
+  /* Force the links into 4 perfectly equal columns on desktop */
+  @media (min-width: 768px) {
+    .links_footer {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      width: 100% !important;
+    }
+  }
+
+  /* Center the text within each column to match the top sections */
+  .links_footer_list {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+/* --- FOOTER ALIGNMENT FIX --- */
+  .links_footer .empty_div {
+    display: none !important; 
+  }
+
+  @media (min-width: 768px) {
+    .links_footer {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      width: 100% !important;
+    }
+  }
+
+  .links_footer_list {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  /* --- PERFECT FOOTER GRID CLEANUP --- */
+  
+  /* 1. Strip ALL default borders from the inner boxes so nothing overlaps or doubles up */
+  .flexbox_box, 
+  .address_hours, 
+  .address_box, 
+  .right_fotoer_box {
+    border: none !important;
+    margin-top: 0 !important;
+  }
+
+  /* 2. Add ONE master border to the top and bottom of the entire row */
+  .content_line {
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    display: flex !important;
+    align-items: stretch !important; /* This forces the Newsletter box to align perfectly with the others */
+  }
+
+  /* 3. Draw exactly THREE clean vertical lines to separate the 4 columns */
+  .address_box {
+    border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
+  }
+  .address_hours {
+    border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
+  }
+  /* --- MOBILE FOOTER BORDER COMPLETION --- */
+  @media (max-width: 767px) {
+    /* 1. Add the missing vertical line on the far left */
+    .content_line {
+      border-left: 1px solid rgba(255, 255, 255, 0.2) !important;
+    }
+    
+    /* 2. Add the horizontal dividing line between the top row and bottom row */
+    .content_line > div:nth-child(1),
+    .content_line > div:nth-child(2) {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    }
+  }
+  /* --- FIX: PULL HOURS & NEWSLETTER TEXT UPWARDS --- */
+  @media (max-width: 767px) {
+    
+    /* Target ONLY the Hours and Newsletter boxes */
+    .address_hours, 
+    .right_fotoer_box {
+      justify-content: flex-start !important; /* This yanks all the text inside them up to the ceiling */
+    }
+
+    /* Control the gap strictly under HOURS */
+    .address_hours .txt_footer.spec {
+      margin-top: 0px !important; /* Shrunk from 30px to 15px to pull the text UP */
+    }
+
+    /* Control the gap strictly under NEWSLETTER */
+    .right_fotoer_box .txt_footer.spec {
+      margin-top: 0px !important; /* Stays at 30px to keep it aligned with Contact */
+    }
+  }
 </style><script type="text/javascript">window.__WEBFLOW_CURRENCY_SETTINGS = {"currencyCode":"USD","symbol":"$","decimal":",","fractionDigits":2,"group":".","template":"{{wf {\"path\":\"symbol\",\"type\":\"PlainText\"} }} {{wf {\"path\":\"amount\",\"type\":\"CommercePrice\"} }} {{wf {\"path\":\"currencyCode\",\"type\":\"PlainText\"} }}","hideDecimalForWholeNumbers":false};</script></head><body data-w-id="68ae592018881dfd78c82901" class="contact_body"><div class="header"><div class="wrapper_header"><div class="flex_header"><div class="left-side"><div class="flexbox"><a href="index.html" aria-current="page" class="logo w-inline-block w--current" style="width:150px; height: auto; display: block;">
                             <img src="https://ik.imagekit.io/f7ddop0qh/picsart%20logo.jpeg" loading="lazy" alt="Cardamom, logo, primary color, png"/>
                         </a><div class="menu_header"><a href="/" class="h-link w-inline-block"><div>Home</div></a><link rel="prerender" href="/"/><a href="/catering.html" class="h-link w-inline-block"><div>Catering</div></a><link rel="prerender" href="/catering"/><div class="h-link"><div data-hover="false" data-delay="0" class="w-dropdown"><div class="link_header drop_locs w-dropdown-toggle"><div>Reserve a Table</div><div class="icon_drop w-icon-dropdown-toggle"></div></div><nav class="links_navs w-dropdown-list"><div class="title_locs"><div class="base_p dark">Choose restaurant</div></div><div class="links_addresses"><a href="https://www.opentable.com/r/Cardamom-indian-restaurant-reservations-ocala?restref=276529&amp;lang=en-US&amp;ot_source=Restaurant%20website" target="_blank" class="link_loc w-dropdown-link">Book — Ocala</a><a href="https://www.opentable.com/r/Cardamom-gainesville-reservations-gainesville?restref=1493497&amp;lang=en-US&amp;ot_source=Restaurant%20website" target="_blank" class="link_loc w-dropdown-link">Book — Gainesville</a></div></nav></div></div><a href="/contact.html" aria-current="page" class="h-link w-inline-block w--current"><div>Contact</div></a><link rel="prerender" href="/contact"/></div></div></div><div class="right-side"><div class="right_links"><a href="/menu.html" class="link_header w-inline-block"><div>Menu</div><div class="icon_box"><img src="https://cdn.prod.website-files.com/68a25157e0edb92947ffe4a2/68ab6aad6d37e1980d319ac9_menu-icon.png" loading="lazy" alt="Menu, icon, png" class="image"/></div></a><div class="line_splitter"></div><div class="link_header"><div data-hover="false" data-delay="0" class="w-dropdown"><div class="link_header drop_locs w-dropdown-toggle"><div>Order Now</div><div class="icon_drop w-icon-dropdown-toggle"></div></div><nav class="links_navs w-dropdown-list"><div class="title_locs"><div class="base_p dark">Choose restaurant</div></div><div class="links_addresses"><a href="https://order.toasttab.com/online/Cardamom-ocala" target="_blank" class="link_loc w-dropdown-link">Cardamom Ocala</a><a href="https://order.toasttab.com/online/Cardamom-gainesville" target="_blank" class="link_loc w-dropdown-link">Cardamom Gainesville</a></div></nav></div><div class="icon_box"><img src="https://cdn.prod.website-files.com/68a25157e0edb92947ffe4a2/68ab6aad663e114eb608fb96_order-icon.png" loading="lazy" alt="Order now, icon, png" class="image"/></div></div></div><div data-w-id="34cfe2f8-63a9-540e-1311-a4fee5f7e4ae" class="hamburger_menu"><div class="menu_txt close">Close</div><div class="menu_txt open">Menu</div><div class="hamburger_box"><div class="line_1"></div><div class="line_2"></div></div></div></div></div></div></div><div class="mobile_menu"><div class="wrapper_menu"><div class="list_menu"><a href="/" class="mobile_menu_link w-inline-block"><div>home</div></a><a href="/catering.html" class="mobile_menu_link w-inline-block"><div>catering</div> class="mobile_menu_link w-inline-block"><div>store</div></a><a href="/contact.html" aria-current="page" class="mobile_menu_link w-inline-block w--current"><div>contact</div></a></div><div class="reserve_table"><div data-hover="false" data-delay="0" class="dropdown_mobile w-dropdown"><div class="dropdown_menu w-dropdown-toggle"><div>reserve a table</div><div class="icon_dropdown"><img src="https://cdn.prod.website-files.com/68a25157e0edb92947ffe4a2/68c9c21775852a6417f46e90_chevron-down.svg" loading="lazy" alt="chevron icon, svg, black"/></div></div><nav class="dropdown_reserves w-dropdown-list"><a href="https://www.opentable.com/r/Cardamom-indian-restaurant-reservations-ocala?restref=276529&amp;lang=en-US&amp;ot_source=Restaurant%20website" target="_blank" class="link_location w-dropdown-link">Book — Ocala</a><a href="https://www.opentable.com/r/Cardamom-gainesville-reservations-gainesville?restref=1493497&amp;lang=en-US&amp;ot_source=Restaurant%20website" target="_blank" class="link_location w-dropdown-link">Book — Gainesville</a></nav></div></div><div class="socials_contacts"><div class="address_menu"><div class="title_menu">Working Hours</div><div class="content_box"><div class="content_menu">Mon-Sun 2PM - 2AM<br></div></div></div><div class="address_menu"><div class="title_menu">Address</div><div class="content_box"><div class="content_menu">7742 N Milwaukee Ave <br/>Niles, IL 60714</div></div></div></div></div></div><div class="fixed_menu"><div class="right_links menu_fixed"><a href="/menu.html" class="link_header link_menu w-inline-block"><div class="menu_rest">Menu</div><div class="icon_box"><img src="https://cdn.prod.website-files.com/68a25157e0edb92947ffe4a2/68ab6aad6d37e1980d319ac9_menu-icon.png" loading="lazy" alt="Menu, icon, png" class="image"/></div></a><div id="w-node-_61c9675a-f097-0b94-ac69-134a32975c7d-32975c76" class="line_splitter"></div><div class="link_header link_order"><div data-hover="false" data-delay="0" class="drop_mobile w-dropdown"><div class="link_header drop_locs w-dropdown-toggle"><div>Order Now</div><div class="icon_drop w-icon-dropdown-toggle"></div></div><nav class="links_navs w-dropdown-list"><div class="title_locs"><div class="base_p dark location_mobile">Choose restaurant</div></div><div class="links_addresses"><a href="https://order.toasttab.com/online/Cardamom-ocala" target="_blank" class="link_loc w-dropdown-link">Cardamom Ocala</a><a href="https://order.toasttab.com/online/Cardamom-gainesville" target="_blank" class="link_loc w-dropdown-link">Cardamom Gainesville</a></div></nav></div><div class="icon_box"><img src="https://cdn.prod.website-files.com/68a25157e0edb92947ffe4a2/68ab6aad663e114eb608fb96_order-icon.png" loading="lazy" alt="Order now, icon, png" class="image"/></div></div></div></div><section class="contact"><section id="hero-section" class="wrapper_general"><div id="hero-sentinel" class="sentinel"></div><div><h1 letters-fade-in="" text-split="" class="h1 middle">We’d Love to<br/>Hear From You</h1></div></section><div class="grid_sides"><div class="left_contact"><div class="contact_box"><div class="flex_contact"><div><div class="title_cont">Write us</div><a fs-copyclip-message="E-mail copied!" fs-copyclip-element="click" href="#" class="contact_link w-inline-block"><div>admin@cardamomchicago.com</div></a></div><div class="icon_contact"><img src="https://cdn.prod.website-files.com/68a25157e0edb92947ffe4a2/68ae5d936694f39565dd72b3_email_icon.png" loading="lazy" alt="Email icon, dark, png"/></div></div></div><div class="map_box"><div class="txt_contact"><div class="contact_txt">Where we are located</div></div></div><div class="map_embed"><div class="location_hide"><div class="pin_icon"><div class="custom-pin"></div></div><div class="w-dyn-list">
