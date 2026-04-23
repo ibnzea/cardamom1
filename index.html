@@ -501,31 +501,40 @@
     align-items: center !important;
     text-align: center !important;
   }
-  /* --- PERFECT FOOTER GRID CLEANUP --- */
-  
-  /* 1. Strip ALL default borders from the inner boxes so nothing overlaps or doubles up */
-  .flexbox_box, 
-  .address_hours, 
-  .address_box, 
-  .right_fotoer_box {
-    border: none !important;
-    margin-top: 0 !important;
+  /* --- MOBILE FOOTER LAYOUT (Wrapped properly so desktop stays safe!) --- */
+  @media (max-width: 767px) {
+    /* 1. Master Grid & Borders */
+    .flexbox_box, .address_hours, .address_box, .right_fotoer_box {
+      border: none !important;
+      margin-top: 0 !important;
+      justify-content: flex-start !important; 
+      width: 50% !important; 
+    }
+    .content_line {
+      border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+      border-left: 1px solid rgba(255, 255, 255, 0.2) !important;
+      display: flex !important;
+      align-items: stretch !important;
+    }
+    .address_box, .address_hours {
+      border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
+    }
+    .content_line > div:nth-child(1), .content_line > div:nth-child(2) {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    }
+
+    /* 2. Text Alignment & Spacing */
+    .address_hours .txt_footer.spec { margin-bottom: 15px !important; }
+    .right_fotoer_box .txt_footer.spec { margin-bottom: 30px !important; }
+
+    /* 3. Hide Sticky Mobile Bar */
+    .fixed_menu { display: none !important; }
   }
 
-  /* 2. Add ONE master border to the top and bottom of the entire row */
-  .content_line {
-    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
-    display: flex !important;
-    align-items: stretch !important; /* This forces the Newsletter box to align perfectly with the others */
-  }
-
-  /* 3. Draw exactly THREE clean vertical lines to separate the 4 columns */
-  .address_box {
-    border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
-  }
-  .address_hours {
-    border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
+  /* --- HIDE HEADER "MENU" TEXT (Global) --- */
+  .menu_txt {
+    display: none !important;
   }
   /* --- MOBILE FOOTER BORDER COMPLETION --- */
   @media (max-width: 767px) {
@@ -574,6 +583,21 @@
         .splide__pagination {
             display: none;
         }
+        /* --- HIDE STICKY BOTTOM BAR & SHADOW ON MOBILE --- */
+  @media (max-width: 767px) {
+    .right_links,
+    .fixed_menu,
+    .bottom_gradient,
+    .gradient_bottom,
+    .sticky_gradient,
+    .fade_bottom {
+      display: none !important;
+    }
+  }
+  /* --- HIDE HEADER "MENU" & "CLOSE" TEXT --- */
+  .menu_txt {
+    display: none !important;
+  }
     </style>
     <script type="text/javascript">
         window.__WEBFLOW_CURRENCY_SETTINGS = {
@@ -682,9 +706,8 @@
                     <div>catering</div>
                 </a>
                 
-                <a href="/store" class="mobile_menu_link w-inline-block">
-                    <div>store</div>
-                </a>
+               <a href="/menu.html" class="mobile_menu_link w-inline-block"><div>menu</div></a>
+<a href="https://order.toasttab.com/online/Cardamom-ocala" target="_blank" class="mobile_menu_link w-inline-block"><div>order now</div></a>
                 
                 <a href="contact.html" class="mobile_menu_link w-inline-block">
                     <div>contact</div>
